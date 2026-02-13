@@ -30,7 +30,10 @@
 3. Layout works on phone and desktop
 4. HTML/CSS/JS structure in place
 
-**Plans:** 1
+**Plans:** 1 plan
+
+Plans:
+- [ ] 01-01-PLAN.md - Create HTML/CSS/JS foundation with click-to-start
 
 ---
 
