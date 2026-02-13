@@ -4,7 +4,7 @@
 :root {
   --color-pink: #ff69b4;
   --color-pink-dark: #ff1493;
-  --color-background: #fff5f8;
+  --color-background: #ffe4ec;
   --color-white: #ffffff;
   --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
@@ -32,7 +32,7 @@ body {
 
 /* Utility classes */
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 /* Screen layout */
