@@ -1,0 +1,106 @@
+/* Valentine's Card - Mobile-First Responsive Styles */
+
+/* CSS Custom Properties */
+:root {
+  --color-pink: #ff69b4;
+  --color-pink-dark: #ff1493;
+  --color-background: #fff5f8;
+  --color-white: #ffffff;
+  --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Reset and base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%; /* Respects user preferences - equals 16px default */
+}
+
+body {
+  font-family: var(--font-family);
+  line-height: 1.5;
+  min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport height for mobile */
+  background: var(--color-background);
+}
+
+/* Utility classes */
+.hidden {
+  display: none;
+}
+
+/* Screen layout */
+.screen {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* Start button - touch optimized */
+.start-btn {
+  min-width: 200px;
+  min-height: 48px; /* Touch target minimum */
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  background: var(--color-pink);
+  color: var(--color-white);
+  cursor: pointer;
+  touch-action: manipulation; /* Remove 300ms delay */
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.start-btn:hover,
+.start-btn:focus {
+  background: var(--color-pink-dark);
+  outline: 2px solid var(--color-pink-dark);
+  outline-offset: 2px;
+}
+
+.start-btn:active {
+  transform: scale(0.98);
+}
+
+/* Responsive images (for Phase 2+) */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Tablet and up */
+@media screen and (min-width: 600px) {
+  .screen {
+    padding: 2rem;
+  }
+
+  .start-btn {
+    min-width: 250px;
+    font-size: 1.5rem;
+    padding: 1.25rem 2.5rem;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+  .screen {
+    padding: 3rem;
+  }
+
+  .start-btn {
+    min-width: 300px;
+  }
+}
