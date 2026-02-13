@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#ff69b4">
   <title>Valentine's Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -17,9 +20,43 @@
 
   <!-- Main Content (hidden until started) -->
   <main id="main-content" class="screen hidden">
-    <!-- Phase 2+ content goes here -->
+    <!-- TODO: Replace placeholder URLs with actual photos in images/photos/ -->
+    <section class="gallery" aria-label="Photo gallery">
+      <figure class="polaroid" style="--i: 0; --rotation: -3deg;">
+        <img src="https://placehold.co/300x300/ff69b4/ffffff?text=Photo+1" alt="Photo 1" loading="lazy">
+        <figcaption>Caption for photo 1</figcaption>
+      </figure>
+      <figure class="polaroid" style="--i: 1; --rotation: 4deg;">
+        <img src="https://placehold.co/300x300/ff69b4/ffffff?text=Photo+2" alt="Photo 2" loading="lazy">
+        <figcaption>Caption for photo 2</figcaption>
+      </figure>
+      <figure class="polaroid" style="--i: 2; --rotation: -2deg;">
+        <img src="https://placehold.co/300x300/ff69b4/ffffff?text=Photo+3" alt="Photo 3" loading="lazy">
+        <figcaption>Caption for photo 3</figcaption>
+      </figure>
+      <figure class="polaroid" style="--i: 3; --rotation: 5deg;">
+        <img src="https://placehold.co/300x300/ff69b4/ffffff?text=Photo+4" alt="Photo 4" loading="lazy">
+        <figcaption>Caption for photo 4</figcaption>
+      </figure>
+      <figure class="polaroid" style="--i: 4; --rotation: -4deg;">
+        <img src="https://placehold.co/300x300/ff69b4/ffffff?text=Photo+5" alt="Photo 5" loading="lazy">
+        <figcaption>Caption for photo 5</figcaption>
+      </figure>
+    </section>
   </main>
 
+  <!-- Lightbox Dialog -->
+  <dialog class="lightbox" aria-label="Photo viewer">
+    <form method="dialog">
+      <button type="submit" class="lightbox-close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </form>
+    <img src="" alt="" class="lightbox-image">
+    <p class="lightbox-caption"></p>
+  </dialog>
+
+  <script type="module" src="js/gallery.js"></script>
   <script type="module" src="js/main.js"></script>
 </body>
 </html>
