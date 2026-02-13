@@ -11,25 +11,26 @@ See: .planning/PROJECT.md (updated 2025-02-13)
 
 **Milestone:** v1.0
 **Phase:** 2 of 4 (Visuals)
-**Plan:** 1 of 1 complete
+**Plan:** 2 of 2 complete
 **Status:** Phase 2 complete
-**Last activity:** 2026-02-13 - Completed 02-01-PLAN.md
+**Last activity:** 2026-02-13 - Completed 02-02-PLAN.md
 
 ## Progress
 
 ```
-Phases: █████░░░░░ 50%
+Phases: ██████░░░░ 60%
 ```
 
 | Phase | Status | Plans |
 |-------|--------|-------|
 | 1 - Foundation | COMPLETE | 1/1 |
-| 2 - Visuals | COMPLETE | 1/1 |
+| 2 - Visuals | COMPLETE | 2/2 |
 | 3 - Interactivity | Pending | 0/1 |
 | 4 - Deploy | Pending | 0/1 |
 
 ## Recent Activity
 
+- 2026-02-13: **Phase 2 Plan 02 executed** - Polaroid gallery with lightbox
 - 2026-02-13: **Phase 2 Plan 01 executed** - Floating hearts animation
 - 2026-02-13: **Phase 1 Plan 01 executed** - Foundation complete
 - 2025-02-13: Project initialized
@@ -49,11 +50,14 @@ Phases: █████░░░░░ 50%
 | 6 hearts with CSS nth-child | 02-01 | Varied timing without JS randomization |
 | SVG mask-image for hearts | 02-01 | Scalable, no image files needed |
 | Hearts animate before click | 02-01 | Per context: visible on start screen |
+| Native dialog for lightbox | 02-02 | Built-in accessibility, Escape close, backdrop |
+| Caveat font for captions | 02-02 | Handwritten style for authentic polaroid feel |
+| CSS custom props --i/--rotation | 02-02 | Per-element stagger/scatter configuration |
 
 ## Session Continuity
 
 **Last session:** 2026-02-13
-**Stopped at:** Completed 02-01-PLAN.md
+**Stopped at:** Completed 02-02-PLAN.md
 **Resume file:** None
 
 ## Open Questions
