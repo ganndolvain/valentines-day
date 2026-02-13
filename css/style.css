@@ -267,3 +267,124 @@ img {
 body:has(.lightbox[open]) {
   overflow: hidden;
 }
+
+/* ==========================================
+   Floating Hearts Animation
+   ========================================== */
+
+/* Hearts container - fixed overlay, non-interactive */
+.hearts-container {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Heart element styling */
+.heart {
+  position: absolute;
+  bottom: -50px;
+  width: var(--size, 30px);
+  height: var(--size, 30px);
+  background-color: var(--color, var(--color-pink));
+  opacity: 0;
+  /* SVG heart mask from Font Awesome */
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z'/%3E%3C/svg%3E");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+/* Float animation keyframes - GPU-accelerated transforms only */
+@keyframes float-heart {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.5);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-50vh) translateX(20px);
+  }
+  95% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-110vh) translateX(-10px) scale(1);
+    opacity: 0;
+  }
+}
+
+/* Staggered hearts with varied properties */
+@media (prefers-reduced-motion: no-preference) {
+  .heart {
+    animation: float-heart 8s infinite ease-in-out;
+  }
+
+  .heart:nth-child(1) {
+    left: 10%;
+    --size: 20px;
+    --color: var(--color-pink);
+    animation-delay: 0s;
+    animation-duration: 7s;
+  }
+
+  .heart:nth-child(2) {
+    left: 25%;
+    --size: 35px;
+    --color: var(--color-pink-dark);
+    animation-delay: 1.5s;
+    animation-duration: 9s;
+  }
+
+  .heart:nth-child(3) {
+    left: 40%;
+    --size: 25px;
+    --color: var(--color-pink);
+    animation-delay: 3s;
+    animation-duration: 8s;
+  }
+
+  .heart:nth-child(4) {
+    left: 55%;
+    --size: 40px;
+    --color: #dc143c;
+    animation-delay: 2s;
+    animation-duration: 10s;
+  }
+
+  .heart:nth-child(5) {
+    left: 70%;
+    --size: 22px;
+    --color: var(--color-pink);
+    animation-delay: 4s;
+    animation-duration: 7.5s;
+  }
+
+  .heart:nth-child(6) {
+    left: 85%;
+    --size: 30px;
+    --color: var(--color-pink-dark);
+    animation-delay: 5s;
+    animation-duration: 8.5s;
+  }
+}
+
+/* Reduced motion: static hearts at varied positions */
+@media (prefers-reduced-motion: reduce) {
+  .heart {
+    animation: none;
+    opacity: 0.5;
+    bottom: auto;
+    top: 10%;
+  }
+
+  .heart:nth-child(1) { left: 10%; --size: 20px; --color: var(--color-pink); top: 15%; }
+  .heart:nth-child(2) { left: 25%; --size: 35px; --color: var(--color-pink-dark); top: 8%; }
+  .heart:nth-child(3) { left: 40%; --size: 25px; --color: var(--color-pink); top: 20%; }
+  .heart:nth-child(4) { left: 55%; --size: 40px; --color: #dc143c; top: 12%; }
+  .heart:nth-child(5) { left: 70%; --size: 22px; --color: var(--color-pink); top: 18%; }
+  .heart:nth-child(6) { left: 85%; --size: 30px; --color: var(--color-pink-dark); top: 5%; }
+}
