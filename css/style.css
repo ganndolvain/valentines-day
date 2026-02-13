@@ -261,13 +261,7 @@ img {
   }
 }
 
-/* Reduced motion: instant polaroid reveal */
-@media (prefers-reduced-motion: reduce) {
-  .gallery.revealed .polaroid {
-    animation: none;
-    opacity: 1;
-  }
-}
+/* Note: Polaroid deal animation always plays - essential to the experience */
 
 /* Prevent body scroll when lightbox open */
 body:has(.lightbox[open]) {
