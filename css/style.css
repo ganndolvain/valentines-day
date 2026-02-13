@@ -376,19 +376,5 @@ body:has(.lightbox[open]) {
   animation-duration: 8.5s;
 }
 
-/* Reduced motion: static hearts at varied positions */
-@media (prefers-reduced-motion: reduce) {
-  .heart {
-    animation: none;
-    opacity: 0.5;
-    bottom: auto;
-    top: 10%;
-  }
-
-  .heart:nth-child(1) { left: 10%; --size: 20px; --color: var(--color-pink); top: 15%; }
-  .heart:nth-child(2) { left: 25%; --size: 35px; --color: var(--color-pink-dark); top: 8%; }
-  .heart:nth-child(3) { left: 40%; --size: 25px; --color: var(--color-pink); top: 20%; }
-  .heart:nth-child(4) { left: 55%; --size: 40px; --color: #dc143c; top: 12%; }
-  .heart:nth-child(5) { left: 70%; --size: 22px; --color: var(--color-pink); top: 18%; }
-  .heart:nth-child(6) { left: 85%; --size: 30px; --color: var(--color-pink-dark); top: 5%; }
-}
+/* Note: Hearts always animate - this is a Valentine's card, animation is essential.
+   The recipient likely won't have reduced-motion enabled on their device. */
