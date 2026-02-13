@@ -11,9 +11,9 @@
 - [ ] **FLOW-03**: Personal message revealed on click
 
 ### Visual Effects
-- [ ] **VFX-01**: Hearts animate on screen
+- [x] **VFX-01**: Hearts animate on screen
 - [ ] **VFX-02**: Glitter/confetti explosion effect
-- [ ] **VFX-03**: Photos displayed as scattered polaroids
+- [x] **VFX-03**: Photos displayed as scattered polaroids
 
 ### Technical
 - [x] **TECH-01**: Works on mobile browsers
@@ -43,9 +43,9 @@
 | FLOW-01 | Phase 1 | Complete |
 | FLOW-02 | Phase 3 | Pending |
 | FLOW-03 | Phase 3 | Pending |
-| VFX-01 | Phase 2 | Pending |
+| VFX-01 | Phase 2 | Complete |
 | VFX-02 | Phase 3 | Pending |
-| VFX-03 | Phase 2 | Pending |
+| VFX-03 | Phase 2 | Complete |
 | TECH-01 | Phase 1 | Complete |
 | TECH-02 | Phase 1 | Complete |
 | TECH-03 | Phase 4 | Pending |
