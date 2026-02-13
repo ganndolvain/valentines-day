@@ -192,6 +192,12 @@ img {
   background: var(--color-white);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   overflow: hidden;
+  /* Center the dialog */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
 }
 
 .lightbox::backdrop {
@@ -246,11 +252,11 @@ img {
   @keyframes lightbox-show {
     from {
       opacity: 0;
-      transform: scale(0.95);
+      transform: translate(-50%, -50%) scale(0.95);
     }
     to {
       opacity: 1;
-      transform: scale(1);
+      transform: translate(-50%, -50%) scale(1);
     }
   }
 }
@@ -317,59 +323,57 @@ body:has(.lightbox[open]) {
   }
 }
 
-/* Staggered hearts with varied properties */
-@media (prefers-reduced-motion: no-preference) {
-  .heart {
-    animation: float-heart 8s infinite ease-in-out;
-  }
+/* Staggered hearts with varied properties - animate by default */
+.heart {
+  animation: float-heart 8s infinite ease-in-out;
+}
 
-  .heart:nth-child(1) {
-    left: 10%;
-    --size: 20px;
-    --color: var(--color-pink);
-    animation-delay: 0s;
-    animation-duration: 7s;
-  }
+.heart:nth-child(1) {
+  left: 10%;
+  --size: 20px;
+  --color: var(--color-pink);
+  animation-delay: 0s;
+  animation-duration: 7s;
+}
 
-  .heart:nth-child(2) {
-    left: 25%;
-    --size: 35px;
-    --color: var(--color-pink-dark);
-    animation-delay: 1.5s;
-    animation-duration: 9s;
-  }
+.heart:nth-child(2) {
+  left: 25%;
+  --size: 35px;
+  --color: var(--color-pink-dark);
+  animation-delay: 1.5s;
+  animation-duration: 9s;
+}
 
-  .heart:nth-child(3) {
-    left: 40%;
-    --size: 25px;
-    --color: var(--color-pink);
-    animation-delay: 3s;
-    animation-duration: 8s;
-  }
+.heart:nth-child(3) {
+  left: 40%;
+  --size: 25px;
+  --color: var(--color-pink);
+  animation-delay: 3s;
+  animation-duration: 8s;
+}
 
-  .heart:nth-child(4) {
-    left: 55%;
-    --size: 40px;
-    --color: #dc143c;
-    animation-delay: 2s;
-    animation-duration: 10s;
-  }
+.heart:nth-child(4) {
+  left: 55%;
+  --size: 40px;
+  --color: #dc143c;
+  animation-delay: 2s;
+  animation-duration: 10s;
+}
 
-  .heart:nth-child(5) {
-    left: 70%;
-    --size: 22px;
-    --color: var(--color-pink);
-    animation-delay: 4s;
-    animation-duration: 7.5s;
-  }
+.heart:nth-child(5) {
+  left: 70%;
+  --size: 22px;
+  --color: var(--color-pink);
+  animation-delay: 4s;
+  animation-duration: 7.5s;
+}
 
-  .heart:nth-child(6) {
-    left: 85%;
-    --size: 30px;
-    --color: var(--color-pink-dark);
-    animation-delay: 5s;
-    animation-duration: 8.5s;
-  }
+.heart:nth-child(6) {
+  left: 85%;
+  --size: 30px;
+  --color: var(--color-pink-dark);
+  animation-delay: 5s;
+  animation-duration: 8.5s;
 }
 
 /* Reduced motion: static hearts at varied positions */
