@@ -7,6 +7,7 @@
   --color-background: #ffe4ec;
   --color-white: #ffffff;
   --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-handwritten: 'Caveat', cursive;
 }
 
 /* Reset and base */
@@ -103,4 +104,166 @@ img {
   .start-btn {
     min-width: 300px;
   }
+}
+
+/* ==========================================
+   Photo Gallery - Polaroid Style
+   ========================================== */
+
+/* Gallery container */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Polaroid styling */
+.polaroid {
+  background: var(--color-white);
+  padding: 0.75rem 0.75rem 2.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1), 0 4px 16px rgba(0, 0, 0, 0.05);
+  transform: rotate(var(--rotation, 0deg));
+  opacity: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.polaroid img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.polaroid figcaption {
+  font-family: var(--font-handwritten);
+  font-size: 1.1rem;
+  text-align: center;
+  color: #333;
+  margin-top: 0.5rem;
+}
+
+/* Hover lift effect */
+.polaroid:hover,
+.polaroid:focus {
+  transform: scale(1.05) rotate(0deg);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15), 0 16px 32px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+/* Deal animation (staggered reveal) */
+.gallery.revealed .polaroid {
+  animation: deal-polaroid 0.5s ease-out forwards;
+  animation-delay: calc(var(--i, 0) * 0.7s);
+}
+
+@keyframes deal-polaroid {
+  from {
+    opacity: 0;
+    transform: translateY(-30px) rotate(0deg) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(var(--rotation, 0deg));
+  }
+}
+
+/* Tablet: larger polaroid images */
+@media screen and (min-width: 600px) {
+  .polaroid img {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+/* ==========================================
+   Lightbox Dialog
+   ========================================== */
+
+.lightbox {
+  border: none;
+  border-radius: 8px;
+  padding: 0;
+  max-width: 90vw;
+  max-height: 90vh;
+  background: var(--color-white);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  display: block;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--color-white);
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.lightbox-caption {
+  font-family: var(--font-handwritten);
+  font-size: 1.25rem;
+  text-align: center;
+  padding: 1rem;
+  color: #333;
+}
+
+/* Lightbox open animation */
+@media (prefers-reduced-motion: no-preference) {
+  .lightbox[open] {
+    animation: lightbox-show 0.25s ease-out;
+  }
+
+  @keyframes lightbox-show {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+/* Reduced motion: instant polaroid reveal */
+@media (prefers-reduced-motion: reduce) {
+  .gallery.revealed .polaroid {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+/* Prevent body scroll when lightbox open */
+body:has(.lightbox[open]) {
+  overflow: hidden;
 }
