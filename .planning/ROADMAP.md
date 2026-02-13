@@ -51,7 +51,11 @@ Plans:
 3. Photos are scattered naturally
 4. Animations perform well on mobile
 
-**Plans:** 1
+**Plans:** 2 plans
+
+Plans:
+- [ ] 02-01-PLAN.md - Floating hearts animation (Wave 1)
+- [ ] 02-02-PLAN.md - Polaroid photo gallery with lightbox (Wave 1)
 
 ---
 
