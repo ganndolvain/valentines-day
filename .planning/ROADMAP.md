@@ -74,7 +74,10 @@ Plans:
 3. Confetti/glitter explodes on reveal
 4. Audio has play/pause control
 
-**Plans:** 1
+**Plans:** 1 plan
+
+Plans:
+- [ ] 03-01-PLAN.md - Audio playback, message reveal, confetti (Wave 1)
 
 ---
 
