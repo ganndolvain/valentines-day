@@ -372,3 +372,112 @@ body:has(.lightbox[open]) {
 
 /* Note: Hearts always animate - this is a Valentine's card, animation is essential.
    The recipient likely won't have reduced-motion enabled on their device. */
+
+/* ==========================================
+   Audio Toggle Button
+   ========================================== */
+
+.audio-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 100;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: var(--color-white);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: box-shadow 0.2s ease, transform 0.1s ease;
+}
+
+.audio-toggle:hover,
+.audio-toggle:focus {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  outline: 2px solid var(--color-pink);
+  outline-offset: 2px;
+}
+
+.audio-toggle:active {
+  transform: scale(0.95);
+}
+
+/* ==========================================
+   Message Section
+   ========================================== */
+
+.message-section {
+  text-align: center;
+  padding: 2rem 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Reveal button - similar to start button */
+.reveal-btn {
+  min-height: 48px;
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  background: var(--color-pink);
+  color: var(--color-white);
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.reveal-btn:hover,
+.reveal-btn:focus {
+  background: var(--color-pink-dark);
+  outline: 2px solid var(--color-pink-dark);
+  outline-offset: 2px;
+}
+
+.reveal-btn:active {
+  transform: scale(0.98);
+}
+
+/* Message container with reveal animation */
+.message {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.message.revealed {
+  animation: message-reveal 0.6s ease-out forwards;
+}
+
+@keyframes message-reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Message text styling - handwritten font */
+.message-text {
+  font-family: var(--font-handwritten);
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: var(--color-pink-dark);
+  padding: 2rem;
+}
+
+/* Tablet: larger message text */
+@media screen and (min-width: 600px) {
+  .message-text {
+    font-size: 1.75rem;
+  }
+}
