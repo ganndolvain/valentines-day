@@ -23,6 +23,11 @@
 
   <!-- Main Content (hidden until started) -->
   <main id="main-content" class="screen hidden">
+    <!-- Audio Toggle Button -->
+    <button id="audio-toggle" class="audio-toggle" aria-label="Toggle music" aria-pressed="true">
+      <span class="audio-icon" aria-hidden="true">🔊</span>
+    </button>
+
     <!-- Replace with your own photos in images/photos/ -->
     <section class="gallery" aria-label="Photo gallery">
       <figure class="polaroid" style="--i: 0; --rotation: -3deg;">
@@ -46,6 +51,19 @@
         <figcaption>Forever yours</figcaption>
       </figure>
     </section>
+
+    <!-- Personal Message Section -->
+    <section class="message-section">
+      <button id="reveal-btn" class="reveal-btn">
+        Open Your Message ❤️
+      </button>
+      <div id="message" class="message" hidden>
+        <p class="message-text">
+          <!-- User replaces this with their personal message -->
+          Your personal message goes here. Write something from the heart!
+        </p>
+      </div>
+    </section>
   </main>
 
   <!-- Lightbox Dialog -->
@@ -59,8 +77,13 @@
     <p class="lightbox-caption"></p>
   </dialog>
 
+  <!-- canvas-confetti library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js"></script>
+
   <script type="module" src="js/hearts.js"></script>
   <script type="module" src="js/gallery.js"></script>
+  <script type="module" src="js/audio.js"></script>
+  <script type="module" src="js/message.js"></script>
   <script type="module" src="js/main.js"></script>
 </body>
 </html>
