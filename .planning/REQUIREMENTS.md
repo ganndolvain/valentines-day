@@ -7,12 +7,12 @@
 
 ### Experience Flow
 - [x] **FLOW-01**: Card has click-to-start interaction (required for audio)
-- [ ] **FLOW-02**: Music begins playing after start interaction
-- [ ] **FLOW-03**: Personal message revealed on click
+- [x] **FLOW-02**: Music begins playing after start interaction
+- [x] **FLOW-03**: Personal message revealed on click
 
 ### Visual Effects
 - [x] **VFX-01**: Hearts animate on screen
-- [ ] **VFX-02**: Glitter/confetti explosion effect
+- [x] **VFX-02**: Glitter/confetti explosion effect
 - [x] **VFX-03**: Photos displayed as scattered polaroids
 
 ### Technical
@@ -41,10 +41,10 @@
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | FLOW-01 | Phase 1 | Complete |
-| FLOW-02 | Phase 3 | Pending |
-| FLOW-03 | Phase 3 | Pending |
+| FLOW-02 | Phase 3 | Complete |
+| FLOW-03 | Phase 3 | Complete |
 | VFX-01 | Phase 2 | Complete |
-| VFX-02 | Phase 3 | Pending |
+| VFX-02 | Phase 3 | Complete |
 | VFX-03 | Phase 2 | Complete |
 | TECH-01 | Phase 1 | Complete |
 | TECH-02 | Phase 1 | Complete |
