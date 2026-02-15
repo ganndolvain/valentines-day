@@ -415,7 +415,7 @@ body:has(.lightbox[open]) {
 
 .message-section {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 0 0.5rem;
   max-width: 600px;
   margin: 0 auto;
   position: relative;
@@ -469,10 +469,11 @@ body:has(.lightbox[open]) {
 /* Message text styling - handwritten font */
 .message-text {
   font-family: var(--font-handwritten);
-  font-size: 1.5rem;
-  line-height: 1.8;
+  font-size: 1.1rem;
+  line-height: 1.25;
   color: var(--color-pink-dark);
-  padding: 2rem;
+  padding: 0.25rem 0.5rem;
+  margin: 0;
 }
 
 /* Tablet: larger message text */

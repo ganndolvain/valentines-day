@@ -1,0 +1,10 @@
+# Raw camera files (converted to jpg)
+*.CR2
+*.ARW
+*.DNG
+*.dng
+*.heic
+*.HEIC
+
+# IDE / tools
+.playwright-mcp/

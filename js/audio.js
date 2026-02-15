@@ -5,7 +5,7 @@
 
 // Audio configuration
 const AUDIO_CONFIG = {
-  src: 'audio/song.mp3', // User replaces with their audio file
+  src: 'audio/song.mp3',
   loop: true,
   volume: 0.7
 };
